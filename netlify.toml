@@ -1,0 +1,8 @@
+[build]
+  functions = "netlify/functions"
+
+[[redirects]]
+  from = "/api/*"
+  to = "https://opensky-network.org/:splat"
+  status = 200
+  force = true
