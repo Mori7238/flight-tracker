@@ -1,0 +1,19 @@
+exports.handler = async function () {
+    try {
+        const res = await fetch("https://opensky-network.org/api/states/all")
+        const data = await res.json()
+
+        return {
+            statusCode: 200,
+            headers: {
+                "Access-Control-Allow-Origin": "*"
+            },
+            body: JSON.stringify(data)
+        }
+    } catch (err) {
+        return {
+            statusCode: 500,
+            body: JSON.stringify({ error: err.message })
+        }
+    }
+}
