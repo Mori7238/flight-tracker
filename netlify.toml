@@ -1,0 +1,9 @@
+[build]
+  functions = "netlify/functions"
+
+[functions]
+  node_bundler = "esbuild"
+
+[[scheduled]]
+  path = "/.netlify/functions/push-check-watchlist"
+  cron = "*/5 * * * *"
